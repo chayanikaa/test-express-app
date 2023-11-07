@@ -35,7 +35,7 @@ pool.query(`
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello Express World!');
+  res.send('Hello Express World! Test3');
 });
 
 // Add an entry
@@ -57,7 +57,7 @@ app.get('/entries', async (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app deployed through ECS test2`);
+  console.log(`Example app deployed through ECS test3`);
   console.log('DB Name', process.env.DB_NAME);
   console.log('DB Endpoint', process.env.DB_ENDPOINT);
   console.log('DB Port', process.env.DB_PORT);
