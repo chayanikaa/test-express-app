@@ -1,0 +1,125 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-1:065412124581:task-definition/ex-terraform-ecs-fargate:4",
+  "containerDefinitions": [
+    {
+      "name": "my-express-test-app",
+      "image": "065412124581.dkr.ecr.eu-west-1.amazonaws.com/my-express-test-app:latest",
+      "cpu": 512,
+      "memory": 1024,
+      "memoryReservation": 512,
+      "portMappings": [
+        {
+          "name": "my-express-test-app",
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "DB_PORT",
+          "value": "5432"
+        },
+        {
+          "name": "DB_ENDPOINT",
+          "value": "ex-terraform-ecs-fargate-default-20231107114520642500000009.c1nm25acz8ds.eu-west-1.rds.amazonaws.com"
+        },
+        {
+          "name": "DB_NAME",
+          "value": "exampledb"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "DB_USERNAME_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:eu-west-1:065412124581:secret:rds!db-ed3bfeda-9520-415c-a002-a509f7b8833e-hOafSU"
+        }
+      ],
+      "startTimeout": 30,
+      "stopTimeout": 120,
+      "user": "0",
+      "privileged": false,
+      "readonlyRootFilesystem": true,
+      "interactive": false,
+      "pseudoTerminal": false,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/aws/ecs/ex-terraform-ecs-fargate/my-express-test-app",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "family": "ex-terraform-ecs-fargate",
+  "taskRoleArn": "arn:aws:iam::065412124581:role/ex-terraform-ecs-fargate-20231107114502469700000002",
+  "executionRoleArn": "arn:aws:iam::065412124581:role/ex-terraform-ecs-fargate-20231107114502469600000001",
+  "networkMode": "awsvpc",
+  "revision": 4,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "ecs.capability.secrets.asm.environment-variables"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.container-ordering"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": [
+    "EC2",
+    "FARGATE"
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2023-11-07T11:48:39.394Z",
+  "registeredBy": "arn:aws:iam::065412124581:user/vscode",
+  "tags": [
+    {
+      "key": "Example",
+      "value": "ex-terraform-ecs-fargate"
+    }
+  ]
+}

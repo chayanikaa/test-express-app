@@ -1,8 +1,8 @@
 # Sample workflow to access AWS resources when workflow is tied to branch
 # The workflow Creates static website using aws s3
 name: AWS example workflow
-on:
-  push
+# on:
+#   push
 env:
   BUCKET_NAME : "test-static-webite-1241234123"
   AWS_REGION : "us-east-1"
@@ -20,7 +20,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: arn:aws:iam::065412124581:role/Github_express-test-app_OIDC_role
-          role-session-name: samplerolesession
+          role-session-name: UploadS3
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name:  Copy Dockerfile to s3
