@@ -57,7 +57,7 @@ app.get('/entries', async (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app deployed through ECS test1`);
+  console.log(`Example app deployed through ECS test2`);
   console.log('DB Name', process.env.DB_NAME);
   console.log('DB Endpoint', process.env.DB_ENDPOINT);
   console.log('DB Port', process.env.DB_PORT);
