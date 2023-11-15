@@ -12,7 +12,7 @@ const factorial = (n) => {
 };
 
 app.get('/', (req, res) => {
-  res.send('Hello Express World! Test3');
+  res.send('Hello Express World! Test1');
 });
 
 app.get('/factorial', (req, res) => {
