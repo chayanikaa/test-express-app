@@ -40,7 +40,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: arn:aws:iam::065412124581:role/Github_express-test-app_OIDC_role
-          role-session-name: UploadS3
+          role-session-name: DeployECSTask
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
